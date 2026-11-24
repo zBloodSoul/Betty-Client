@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Betty Client</title>
+  <meta name="description" content="Betty Client — a lightweight launcher and client for Minecraft: Java Edition 1.8.9. Coming soon.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sfondo: #140D22;
+      --pannelli: #231A36;
+      --notte: #3A2D63;
+      --crema: #F6E3BF;
+      --testo-2: rgba(246, 227, 191, 0.70);
+      --testo-3: rgba(246, 227, 191, 0.45);
+      --rosa: #FF8F9C;
+      --lilla: #B9AEDB;
+      --bordo: rgba(185, 174, 219, 0.16);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      min-height: 100vh;
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(58, 45, 99, 0.9), transparent 60%), var(--sfondo);
+      color: var(--crema);
+      font-family: 'Archivo', 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.55;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 64px 16px 40px;
+      flex: 1;
+    }
+    .hero { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .hero img { width: 132px; height: 132px; border-radius: 30px; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45); }
+    h1 {
+      margin: 0;
+      font-size: clamp(44px, 9vw, 76px);
+      font-weight: 900;
+      font-stretch: 112%;
+      letter-spacing: 0.01em;
+      line-height: 1;
+    }
+    .badge {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--rosa);
+      color: #1A1226;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .lead { margin: 36px 0 0; font-size: 20px; color: var(--crema); max-width: 680px; }
+    .it { margin: 8px 0 0; font-size: 16px; color: var(--testo-2); max-width: 680px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 40px; }
+    .card { background: var(--pannelli); border: 1px solid var(--bordo); border-radius: 18px; padding: 20px; }
+    .card h2 { margin: 0 0 6px; font-size: 16px; font-weight: 800; color: var(--rosa); letter-spacing: 0.02em; }
+    .card p { margin: 0; font-size: 15px; color: var(--testo-2); }
+    footer {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 24px 16px 32px;
+      border-top: 1px solid var(--bordo);
+      font-size: 13px;
+      color: var(--testo-3);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="hero">
+      <img src="logo.png" alt="Betty Client logo" width="132" height="132">
+      <div>
+        <h1>Betty Client</h1>
+        <span class="badge">Coming soon</span>
+      </div>
+    </div>
+
+    <p class="lead">A lightweight launcher and client for <strong>Minecraft: Java Edition 1.8.9</strong>, built for smooth gameplay on everyday PCs.</p>
+    <p class="it">Un launcher e client leggero per Minecraft: Java Edition 1.8.9, pensato per giocare fluido anche su PC senza scheda video dedicata. In arrivo.</p>
+
+    <div class="cards">
+      <section class="card">
+        <h2>Official Microsoft sign-in</h2>
+        <p>Players sign in with their own Microsoft account. Betty never sees passwords and does not support offline or unlicensed accounts.</p>
+      </section>
+      <section class="card">
+        <h2>Official game files</h2>
+        <p>Minecraft is downloaded only from Mojang's servers and every file is verified. Betty only adds its own client-side features.</p>
+      </section>
+      <section class="card">
+        <h2>Your data stays on your PC</h2>
+        <p>Login tokens are stored encrypted on the user's computer (Windows DPAPI). No ads, no tracking.</p>
+      </section>
+    </div>
+  </main>
+  <footer>
+    Betty Client is an independent project. Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.
+  </footer>
+</body>
+</html>
