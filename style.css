@@ -1,0 +1,118 @@
+/* Betty Client — sito di presentazione. Palette del brand (vedi launcher/renderer/css/tokens.css). */
+:root {
+  --sfondo: #140D22;
+  --inchiostro: #1A1226;
+  --pannelli: #231A36;
+  --pannelli-2: #2C2244;
+  --notte: #3A2D63;
+  --crema: #F6E3BF;
+  --sabbia: #E9C58F;
+  --testo-2: rgba(246, 227, 191, 0.72);
+  --testo-3: rgba(246, 227, 191, 0.48);
+  --rosa: #FF8F9C;
+  --lilla: #B9AEDB;
+  --ok: #8FE3B0;
+  --bordo: rgba(185, 174, 219, 0.16);
+  --r: 18px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; }
+body {
+  background: var(--sfondo);
+  color: var(--crema);
+  font-family: 'Archivo', 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+}
+a { color: var(--rosa); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+/* Barra in alto */
+.top {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(20, 13, 34, 0.86);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--bordo);
+}
+.top .wrap { display: flex; align-items: center; gap: 24px; height: 64px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--crema); font-weight: 800; font-stretch: 110%; font-size: 18px; }
+.brand:hover { text-decoration: none; }
+.brand img { width: 34px; height: 34px; border-radius: 9px; }
+.nav { margin-left: auto; display: flex; gap: 20px; flex-wrap: wrap; }
+.nav a { color: var(--testo-2); font-size: 14px; font-weight: 600; }
+.nav a:hover { color: var(--crema); text-decoration: none; }
+
+/* Hero */
+.hero {
+  background: radial-gradient(900px 480px at 85% -10%, rgba(58, 45, 99, 0.95), transparent 65%);
+  padding: 88px 0 72px;
+}
+.hero .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: var(--pannelli); border: 1px solid var(--bordo); font-size: 13px; font-weight: 700; color: var(--testo-2); }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sabbia); }
+h1 { margin: 18px 0 0; font-size: clamp(42px, 7vw, 68px); font-weight: 900; font-stretch: 112%; line-height: 1.02; letter-spacing: 0.005em; }
+h1 span { color: var(--rosa); }
+.lead { margin: 20px 0 0; font-size: 19px; color: var(--testo-2); max-width: 560px; }
+.cta { margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 12px 20px; border-radius: 14px; font-weight: 800; font-size: 15px; }
+.btn.primary { background: var(--rosa); color: var(--inchiostro); }
+.btn.ghost { border: 1px solid var(--bordo); color: var(--crema); background: var(--pannelli); }
+.btn:hover { text-decoration: none; transform: translateY(-2px); }
+.hero-art { display: flex; justify-content: center; }
+.hero-art img { width: min(300px, 70vw); border-radius: 64px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5); }
+
+/* Sezioni */
+section { padding: 64px 0; border-top: 1px solid var(--bordo); }
+h2 { margin: 0; font-size: clamp(28px, 4vw, 38px); font-weight: 900; font-stretch: 108%; }
+.sub { margin: 10px 0 0; color: var(--testo-2); max-width: 680px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 32px; }
+.card { background: var(--pannelli); border: 1px solid var(--bordo); border-radius: var(--r); padding: 22px; }
+.card h3 { margin: 0 0 6px; font-size: 17px; font-weight: 800; }
+.card p { margin: 0; color: var(--testo-2); font-size: 15px; }
+.tag { display: inline-block; margin-bottom: 10px; padding: 3px 9px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; background: var(--notte); color: var(--lilla); }
+.tag.soon { background: rgba(233, 197, 143, 0.16); color: var(--sabbia); }
+
+/* Passi del login */
+.steps { list-style: none; margin: 32px 0 0; padding: 0; display: grid; gap: 12px; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; background: var(--pannelli); border: 1px solid var(--bordo); border-radius: var(--r); padding: 18px 20px; }
+.steps li::before { content: counter(s); width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--notte); color: var(--crema); font-weight: 900; font-size: 18px; }
+.steps li > div > b { display: block; font-size: 16px; }
+.steps span { color: var(--testo-2); font-size: 15px; }
+code { font-family: Consolas, 'Cascadia Mono', monospace; font-size: 0.92em; background: var(--inchiostro); padding: 1px 6px; border-radius: 6px; color: var(--sabbia); }
+
+/* Impegni */
+.checks { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px 28px; }
+.checks li { position: relative; padding-left: 30px; color: var(--testo-2); }
+.checks li::before { content: ''; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 6px; background: rgba(143, 227, 176, 0.16); border: 1px solid rgba(143, 227, 176, 0.5); }
+.checks li::after { content: ''; position: absolute; left: 6px; top: 7px; width: 5px; height: 9px; border: solid var(--ok); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.checks b { color: var(--crema); }
+
+/* FAQ */
+details { background: var(--pannelli); border: 1px solid var(--bordo); border-radius: var(--r); padding: 16px 20px; margin-top: 10px; }
+details:first-of-type { margin-top: 28px; }
+summary { cursor: pointer; font-weight: 800; }
+details p { margin: 10px 0 0; color: var(--testo-2); }
+
+/* Pagine di testo (privacy) */
+.doc { padding: 56px 0 72px; }
+.doc .wrap { max-width: 780px; }
+.doc h1 { font-size: clamp(36px, 6vw, 52px); }
+.doc h2 { font-size: 22px; margin-top: 36px; }
+.doc p, .doc li { color: var(--testo-2); }
+.doc .meta { color: var(--testo-3); font-size: 14px; margin-top: 8px; }
+
+/* Piè di pagina */
+footer { border-top: 1px solid var(--bordo); padding: 32px 0 40px; color: var(--testo-3); font-size: 13px; }
+footer .wrap { display: flex; gap: 16px 32px; flex-wrap: wrap; justify-content: space-between; }
+footer nav { display: flex; gap: 18px; flex-wrap: wrap; }
+footer a { color: var(--testo-2); }
+
+@media (max-width: 760px) {
+  .hero { padding: 56px 0 48px; }
+  .hero .wrap { grid-template-columns: 1fr; }
+  .hero-art { order: -1; justify-content: flex-start; }
+  .hero-art img { width: 120px; border-radius: 28px; }
+  .nav { display: none; }
+}

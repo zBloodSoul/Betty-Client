@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy · Betty Client</title>
+  <meta name="description" content="How Betty Client handles your data: no servers, no tracking, sign-in tokens stored encrypted on your PC.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="logo.png" alt="">Betty Client</a>
+      <nav class="nav">
+        <a href="./#features">Features</a>
+        <a href="./#sign-in">Sign-in &amp; security</a>
+        <a href="./#commitments">Fair play</a>
+        <a href="./#faq">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc">
+    <div class="wrap">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Last updated: 24 November 2026</p>
+
+      <p>Betty Client ("Betty") is a desktop launcher and client for Minecraft: Java Edition 1.8.9. This policy explains what data Betty handles and where it goes. In short: <b>Betty has no servers, collects nothing, and keeps your sign-in on your own PC.</b></p>
+
+      <h2>1. Microsoft account sign-in</h2>
+      <p>When you sign in, you enter your credentials on Microsoft's official sign-in page. Betty never sees or stores your password. After sign-in, Betty receives tokens from Microsoft, Xbox Live and Minecraft services, which are used only to verify that you own Minecraft and to launch the game.</p>
+
+      <h2>2. Data stored on your computer</h2>
+      <ul>
+        <li>Your sign-in refresh token, encrypted with Windows DPAPI so that only your Windows user can read it. Signing out deletes it.</li>
+        <li>Your Minecraft username, UUID and skin, used to show your profile in the launcher.</li>
+        <li>Launcher and client settings, HUD layouts, profiles and cosmetics you choose.</li>
+        <li>Log files of the launcher and the game, kept locally to help you troubleshoot.</li>
+      </ul>
+      <p>None of this data leaves your computer, except when you choose to share it (for example by sending a log file when asking for help).</p>
+
+      <h2>3. Services Betty connects to</h2>
+      <ul>
+        <li><b>Microsoft, Xbox Live and Minecraft services</b>, to sign you in and check game ownership.</li>
+        <li><b>Mojang's download servers</b>, to download and verify the game, its libraries and assets.</li>
+        <li><b>Adoptium (Eclipse Foundation)</b>, to download the Java runtime required by the game, if it is not already installed.</li>
+      </ul>
+      <p>These services process requests under their own privacy policies. Betty does not send them any data beyond what is needed for these requests.</p>
+
+      <h2>4. What Betty does not do</h2>
+      <ul>
+        <li>No analytics, telemetry, advertising or tracking.</li>
+        <li>No accounts on our side and no Betty servers.</li>
+        <li>No selling or sharing of personal data.</li>
+      </ul>
+
+      <h2>5. Deleting your data</h2>
+      <p>Sign out in the launcher to delete your sign-in token. Uninstalling Betty and deleting the <code>%APPDATA%\betty</code> and <code>%APPDATA%\.betty</code> folders removes all remaining data. You can also revoke Betty's access at any time from your Microsoft account settings (<a href="https://account.live.com/consent/Manage">account.live.com/consent/Manage</a>).</p>
+
+      <h2>6. Children</h2>
+      <p>Betty uses Microsoft accounts, so Microsoft's family and age settings apply to sign-in.</p>
+
+      <h2>7. Changes and contact</h2>
+      <p>If this policy changes, the new version will be published on this page with a new date. For questions, open an issue on <a href="https://github.com/zBloodSoul/Betty-Client/issues">GitHub</a>.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; 2026 Betty Client. Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</span>
+      <nav>
+        <a href="./">Home</a>
+        <a href="https://github.com/zBloodSoul/Betty-Client/issues">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

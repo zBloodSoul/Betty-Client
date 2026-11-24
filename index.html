@@ -4,110 +4,125 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Betty Client</title>
-  <meta name="description" content="Betty Client — a lightweight launcher and client for Minecraft: Java Edition 1.8.9. Coming soon.">
+  <meta name="description" content="Betty Client is a lightweight launcher and client for Minecraft: Java Edition 1.8.9 with official Microsoft sign-in. In development.">
+  <meta property="og:title" content="Betty Client">
+  <meta property="og:description" content="A lightweight launcher and client for Minecraft: Java Edition 1.8.9. In development.">
+  <meta property="og:image" content="https://zbloodsoul.github.io/Betty-Client/logo.png">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --sfondo: #140D22;
-      --pannelli: #231A36;
-      --notte: #3A2D63;
-      --crema: #F6E3BF;
-      --testo-2: rgba(246, 227, 191, 0.70);
-      --testo-3: rgba(246, 227, 191, 0.45);
-      --rosa: #FF8F9C;
-      --lilla: #B9AEDB;
-      --bordo: rgba(185, 174, 219, 0.16);
-    }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; }
-    body {
-      min-height: 100vh;
-      background: radial-gradient(1200px 600px at 80% -10%, rgba(58, 45, 99, 0.9), transparent 60%), var(--sfondo);
-      color: var(--crema);
-      font-family: 'Archivo', 'Segoe UI', system-ui, sans-serif;
-      line-height: 1.55;
-      display: flex;
-      flex-direction: column;
-    }
-    main {
-      width: 100%;
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 64px 16px 40px;
-      flex: 1;
-    }
-    .hero { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
-    .hero img { width: 132px; height: 132px; border-radius: 30px; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45); }
-    h1 {
-      margin: 0;
-      font-size: clamp(44px, 9vw, 76px);
-      font-weight: 900;
-      font-stretch: 112%;
-      letter-spacing: 0.01em;
-      line-height: 1;
-    }
-    .badge {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 5px 12px;
-      border-radius: 999px;
-      background: var(--rosa);
-      color: #1A1226;
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .lead { margin: 36px 0 0; font-size: 20px; color: var(--crema); max-width: 680px; }
-    .it { margin: 8px 0 0; font-size: 16px; color: var(--testo-2); max-width: 680px; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 40px; }
-    .card { background: var(--pannelli); border: 1px solid var(--bordo); border-radius: 18px; padding: 20px; }
-    .card h2 { margin: 0 0 6px; font-size: 16px; font-weight: 800; color: var(--rosa); letter-spacing: 0.02em; }
-    .card p { margin: 0; font-size: 15px; color: var(--testo-2); }
-    footer {
-      width: 100%;
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 24px 16px 32px;
-      border-top: 1px solid var(--bordo);
-      font-size: 13px;
-      color: var(--testo-3);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <div class="hero">
-      <img src="logo.png" alt="Betty Client logo" width="132" height="132">
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="logo.png" alt="">Betty Client</a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#sign-in">Sign-in &amp; security</a>
+        <a href="#commitments">Fair play</a>
+        <a href="#faq">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
       <div>
-        <h1>Betty Client</h1>
-        <span class="badge">Coming soon</span>
+        <span class="eyebrow"><span class="dot"></span>In development &middot; not yet released</span>
+        <h1>Minecraft 1.8.9,<br><span>lighter and smoother.</span></h1>
+        <p class="lead">Betty Client is a desktop launcher and client for Minecraft: Java Edition 1.8.9. It signs you in with your own Microsoft account, downloads the game only from Mojang, and adds a clean HUD, modern menus and performance options designed for everyday PCs.</p>
+        <div class="cta">
+          <a class="btn primary" href="#features">Discover Betty</a>
+          <a class="btn ghost" href="#sign-in">How sign-in works</a>
+        </div>
       </div>
+      <div class="hero-art"><img src="logo.png" alt="Betty Client logo"></div>
     </div>
+  </div>
 
-    <p class="lead">A lightweight launcher and client for <strong>Minecraft: Java Edition 1.8.9</strong>, built for smooth gameplay on everyday PCs.</p>
-    <p class="it">Un launcher e client leggero per Minecraft: Java Edition 1.8.9, pensato per giocare fluido anche su PC senza scheda video dedicata. In arrivo.</p>
+  <main>
+    <section id="features">
+      <div class="wrap">
+        <h2>Built to be light</h2>
+        <p class="sub">Everything runs inside the original game, with no extra mod loader. Betty only adds client-side features that change what <em>you</em> see.</p>
+        <div class="grid">
+          <div class="card"><span class="tag">Launcher</span><h3>One-click play</h3><p>Microsoft sign-in, game files and Java handled for you, with verified downloads.</p></div>
+          <div class="card"><span class="tag">Performance</span><h3>Smooth on integrated graphics</h3><p>Fewer particles, entity culling and a frame cap in menus. No shaders required.</p></div>
+          <div class="card"><span class="tag">HUD</span><h3>Your HUD, your layout</h3><p>FPS, CPS, ping, coordinates, armour and keystrokes, placed anywhere with a drag-and-drop editor.</p></div>
+          <div class="card"><span class="tag">Menus</span><h3>Modern interface</h3><p>New main menu, pause menu and server list with favourites and live ping.</p></div>
+          <div class="card"><span class="tag">Cosmetics</span><h3>Capes and wings</h3><p>Animated cosmetics rendered on your own player only. They never change gameplay.</p></div>
+          <div class="card"><span class="tag soon">Planned</span><h3>OptiFine support</h3><p>Use the OptiFine version you download yourself from optifine.net, alongside Betty.</p></div>
+        </div>
+      </div>
+    </section>
 
-    <div class="cards">
-      <section class="card">
-        <h2>Official Microsoft sign-in</h2>
-        <p>Players sign in with their own Microsoft account. Betty never sees passwords and does not support offline or unlicensed accounts.</p>
-      </section>
-      <section class="card">
-        <h2>Official game files</h2>
-        <p>Minecraft is downloaded only from Mojang's servers and every file is verified. Betty only adds its own client-side features.</p>
-      </section>
-      <section class="card">
-        <h2>Your data stays on your PC</h2>
-        <p>Login tokens are stored encrypted on the user's computer (Windows DPAPI). No ads, no tracking.</p>
-      </section>
-    </div>
+    <section id="sign-in">
+      <div class="wrap">
+        <h2>Sign-in &amp; security</h2>
+        <p class="sub">Betty uses only the official, documented sign-in flow. Your password is entered on Microsoft's own page and is never seen or stored by Betty.</p>
+        <ol class="steps">
+          <li><div><b>Microsoft sign-in</b><span>The player signs in on Microsoft's official page (OAuth 2.0 with PKCE, registered public client).</span></div></li>
+          <li><div><b>Xbox Live &amp; XSTS</b><span>The Microsoft token is exchanged with Xbox Live for an XSTS token, exactly as the official launcher does.</span></div></li>
+          <li><div><b>Minecraft services</b><span>The XSTS token is exchanged for a Minecraft access token, and <b>game ownership is checked</b> before anything can be launched.</span></div></li>
+          <li><div><b>Official game files</b><span>The game, libraries and assets are downloaded only from Mojang's servers and verified with SHA-1 before launch.</span></div></li>
+          <li><div><b>Stored safely</b><span>The refresh token is kept only on the player's PC, encrypted with Windows DPAPI. Signing out deletes it.</span></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="commitments">
+      <div class="wrap">
+        <h2>Our commitments</h2>
+        <p class="sub">Betty follows the Minecraft EULA and the Minecraft Usage Guidelines.</p>
+        <ul class="checks">
+          <li><b>Licensed accounts only.</b> No offline or cracked mode, ever.</li>
+          <li><b>No bypassing</b> authentication, ownership, licence or safety checks.</li>
+          <li><b>Fair play.</b> No cheats, no automation that plays for you, no unfair advantage on servers.</li>
+          <li><b>No Mojang files redistributed.</b> Everything comes from Mojang's servers.</li>
+          <li><b>No ads, no tracking, no selling of data.</b></li>
+          <li><b>Independent project.</b> Not affiliated with Mojang or Microsoft.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <h2>FAQ</h2>
+        <details>
+          <summary>Is Betty Client available?</summary>
+          <p>Not yet. Betty is in development and is currently used only for testing. This page will be updated when it is released.</p>
+        </details>
+        <details>
+          <summary>Do I need to own Minecraft?</summary>
+          <p>Yes. Betty requires a Microsoft account that owns Minecraft: Java Edition and checks ownership before launching.</p>
+        </details>
+        <details>
+          <summary>Which version of Minecraft does it support?</summary>
+          <p>Minecraft: Java Edition 1.8.9 on Windows.</p>
+        </details>
+        <details>
+          <summary>Does Betty collect my data?</summary>
+          <p>No. Betty has no servers of its own and sends nothing to us. See the <a href="privacy.html">Privacy Policy</a>.</p>
+        </details>
+        <details>
+          <summary>How can I contact the team?</summary>
+          <p>Open an issue on <a href="https://github.com/zBloodSoul/Betty-Client/issues">GitHub</a>.</p>
+        </details>
+      </div>
+    </section>
   </main>
+
   <footer>
-    Betty Client is an independent project. Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.
+    <div class="wrap">
+      <span>&copy; 2026 Betty Client. Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</span>
+      <nav>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://github.com/zBloodSoul/Betty-Client/issues">Contact</a>
+      </nav>
+    </div>
   </footer>
 </body>
 </html>
