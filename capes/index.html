@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cape Creator · Betty Client</title>
+  <meta name="description" content="Draw your own cape for Betty Client, see it in 3D and download it ready to use.">
+  <meta property="og:title" content="Betty Cape Creator">
+  <meta property="og:description" content="Draw your own cape for Betty Client, see it in 3D and download it ready to use.">
+  <meta property="og:image" content="https://zbloodsoul.github.io/Betty-Client/logo.png">
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-in">
+      <a class="brand" href="../"><img src="../logo.png" alt="">Betty Client</a>
+      <nav class="nav">
+        <a href="../#features">Features</a>
+        <a href="./" aria-current="page">Cape creator</a>
+        <a href="../#faq">FAQ</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="top">
+    <div>
+      <h1>Cape creator</h1>
+      <p class="sub">Draw the back of your cape, check it in 3D and download it for Betty Client.</p>
+    </div>
+  </div>
+
+  <main class="layout">
+    <!-- tools -->
+    <aside class="panel tools" aria-label="Tools">
+      <section>
+        <h2>Tool</h2>
+        <div class="seg" id="tools">
+          <button data-tool="brush" class="on" title="Brush (B)">Brush</button>
+          <button data-tool="eraser" title="Eraser (E)">Eraser</button>
+          <button data-tool="fill" title="Fill (F)">Fill</button>
+          <button data-tool="picker" title="Color picker (I)">Picker</button>
+          <button data-tool="text" title="Text (T)">Text</button>
+        </div>
+        <label class="row">Color <input type="color" id="color" value="#ff8f9c"></label>
+        <div class="swatches" id="swatches"></div>
+        <label class="row">Size <input type="range" id="size" min="1" max="60" value="10"><output id="sizeOut">10</output></label>
+        <label class="row">Opacity <input type="range" id="opacity" min="5" max="100" value="100"><output id="opacityOut">100%</output></label>
+        <label class="row" id="textRow" hidden>Text <input type="text" id="text" value="Betty" maxlength="40"></label>
+      </section>
+
+      <section>
+        <h2>Background</h2>
+        <div class="presets" id="presets"></div>
+        <label class="row">Color A <input type="color" id="bgA" value="#3a2d63"></label>
+        <label class="row">Color B <input type="color" id="bgB" value="#ff8f9c"></label>
+        <label class="row">Direction
+          <select id="bgDir">
+            <option value="v">Top to bottom</option>
+            <option value="h">Left to right</option>
+            <option value="d">Diagonal</option>
+            <option value="r">From the center</option>
+          </select>
+        </label>
+        <div class="btns">
+          <button id="bgApply">Add background</button>
+          <button id="stars">Add stars</button>
+        </div>
+        <p class="hint">The background goes under your drawing: nothing you drew is lost.</p>
+      </section>
+
+      <section>
+        <h2>Image</h2>
+        <label class="file">Upload a PNG, JPG or GIF<input type="file" id="file" accept="image/png,image/jpeg,image/gif,image/webp"></label>
+        <label class="row">Fit
+          <select id="fit">
+            <option value="cover">Fill the cape</option>
+            <option value="contain">Whole image, no cropping</option>
+          </select>
+        </label>
+        <label class="check" id="gifRow" hidden><input type="checkbox" id="keepGif" checked> Keep the GIF animation</label>
+        <p class="hint" id="gifHint" hidden></p>
+      </section>
+    </aside>
+
+    <!-- canvas -->
+    <section class="panel canvas-wrap" aria-label="Canvas">
+      <div class="canvas-head">
+        <h2>Back of the cape <span class="dim">10 × 16</span></h2>
+        <div class="btns">
+          <button id="undo" title="Undo (Ctrl+Z)">Undo</button>
+          <button id="redo" title="Redo (Ctrl+Y)">Redo</button>
+          <button id="clear" class="danger">Clear</button>
+        </div>
+      </div>
+      <div class="stage">
+        <canvas id="view" width="240" height="384"></canvas>
+      </div>
+      <p class="hint center">The top edge is the one attached to your shoulders. The inside shows the same drawing, darker.</p>
+    </section>
+
+    <!-- preview and export -->
+    <aside class="panel side" aria-label="Preview and download">
+      <section>
+        <h2>3D preview</h2>
+        <div id="preview" class="preview"><p class="hint center" id="noGl">3D preview is not available in this browser.</p></div>
+        <div class="seg small">
+          <button id="viewBack" class="on">Back</button>
+          <button id="viewSide">Side</button>
+          <button id="viewFront">Front</button>
+          <button id="spin">Spin</button>
+        </div>
+        <p class="hint center">Drag to turn the player.</p>
+      </section>
+
+      <section>
+        <h2>Cape</h2>
+        <label class="row">Name <input type="text" id="name" value="My cape" maxlength="40"></label>
+        <p class="hint">Folder: <code id="idOut">my_cape</code></p>
+        <div class="seg" id="style">
+          <button data-style="stoffa">Cloth</button>
+          <button data-style="pannello">Panel</button>
+        </div>
+        <label class="row">Effect
+          <select id="effect">
+            <option value="none">None</option>
+            <option value="sparkle">Sparkles</option>
+            <option value="shine">Light sweep</option>
+            <option value="pulse">Pulse</option>
+            <option value="rainbow">Rainbow</option>
+          </select>
+        </label>
+        <label class="row">Speed
+          <select id="fps">
+            <option value="6">Slow</option>
+            <option value="10" selected>Normal</option>
+            <option value="16">Fast</option>
+          </select>
+        </label>
+        <button id="export" class="primary">Download for Betty (.zip)</button>
+        <p class="hint" id="exportMsg"></p>
+      </section>
+
+      <details class="howto">
+        <summary>How do I use it in game?</summary>
+        <ol>
+          <li>Press <b>Download for Betty</b>.</li>
+          <li>Open the folder <code>%APPDATA%\.betty\cosmetics</code> (Win + R, paste, Enter).</li>
+          <li>Extract the .zip there: it becomes a folder named after your cape.</li>
+          <li>In game: <b>Cosmetics › Capes</b>. Betty loads it by itself, even while playing.</li>
+        </ol>
+      </details>
+    </aside>
+  </main>
+
+  <footer class="foot">Your capes stay on your computer: nothing is uploaded.</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/zip.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/preview.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
